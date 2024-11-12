@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ./nginx  # Путь к Dockerfile для Nginx
+    ports:
+      - "80:80"
+
+  postgres:
+    build:
+      context: ./postgres  # Путь к Dockerfile для PostgreSQL
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test_password
